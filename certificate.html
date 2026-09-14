@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Certificate of Completion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Cinzel:wght@500;700&family=Lato:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: 'Lato', sans-serif;
+    }
+
+    /* กรอบเกียรติบัตรหลัก */
+    .certificate-container {
+      width: 1000px;
+      height: 700px;
+      background-color: #ffffff;
+      padding: 30px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      position: relative;
+    }
+
+    /* กรอบเส้นขอบด้านใน */
+    .border-outer {
+      border: 4px solid #0082a6;
+      height: 100%;
+      padding: 8px;
+      position: relative;
+    }
+
+    .border-inner {
+      border: 1px solid #0082a6;
+      height: 100%;
+      padding: 30px 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+      position: relative;
+    }
+
+    /* ส่วนบนสุด: ไอคอนหุ่นยนต์ */
+    .robot-icon {
+      width: 60px;
+      margin-bottom: -10px;
+    }
+
+    /* หัวข้อหลัก */
+    .title {
+      font-family: 'Cinzel', serif;
+      font-size: 42px;
+      color: #0082a6;
+      font-weight: 500;
+      margin-top: 5px;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: #3b7b8e;
+      margin-top: 5px;
+    }
+
+    /* ชื่อผู้ได้รับเกียรติบัตร */
+    .recipient-name {
+      font-family: 'Cinzel', serif;
+      font-size: 46px;
+      font-weight: 700;
+      color: #333333;
+      margin: 15px 0;
+    }
+
+    /* รายละเอียดหลัก */
+    .description {
+      font-size: 18px;
+      color: #3b7b8e;
+      line-height: 1.5;
+    }
+
+    .course-title {
+      font-family: 'Cinzel', serif;
+      font-size: 48px;
+      color: #0082a6;
+      font-weight: 500;
+      margin: 5px 0;
+    }
+
+    /* ส่วนท้าย: ลายเซ็น โลโก้ และตราประทับ */
+    .footer-section {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-top: 10px;
+    }
+
+    /* โลโก้ CODE.org */
+    .code-logo {
+      text-align: left;
+    }
+
+    .code-box {
+      background-color: #000;
+      color: #fff;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      padding: 4px;
+      width: 80px;
+      height: 80px;
+      font-weight: bold;
+      font-size: 22px;
+      text-align: center;
+    }
+
+    .code-box div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #fff;
+    }
+
+    .logo-text {
+      font-size: 12px;
+      color: #0082a6;
+      margin-top: 8px;
+      font-weight: bold;
+    }
+
+    /* ลายเซ็น */
+    .signature-area {
+      text-align: center;
+    }
+
+    .signature-img {
+      font-family: 'Caveat', cursive;
+      font-size: 45px;
+      color: #111;
+      line-height: 1;
+      transform: rotate(-3deg);
+    }
+
+    .signer-meta {
+      font-size: 11px;
+      color: #777777;
+      margin-top: 5px;
+    }
+
+    /* ตราประทับขวาซูม */
+    .badge-area {
+      width: 100px;
+      height: 100px;
+      background: #0082a6;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 12px;
+      font-weight: bold;
+      border: 4px dashed #ffffff;
+      box-shadow: 0 0 0 4px #0082a6;
+      text-align: center;
+      padding: 10px;
+    }
+
+    /* ข้อความล่างสุด */
+    .bottom-note {
+      font-size: 13px;
+      color: #555555;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="certificate-container">
+    <div class="border-outer">
+      <div class="border-inner">
+
+        <!-- ไอคอนหุ่นยนต์ -->
+        <div>
+          <svg class="robot-icon" viewBox="0 0 100 100" fill="#0082a6">
+            <path d="M50,10 A10,10 0 0,1 50,30 A10,10 0 0,1 50,10 M40,35 L60,35 L60,40 L40,40 Z M25,40 L75,40 C80,40 85,45 85,50 L85,80 C85,85 80,90 75,90 L25,90 C20,90 15,85 15,80 L15,50 C15,45 20,40 25,40 Z"/>
+          </svg>
+        </div>
+
+        <!-- ข้อความส่วนหัว -->
+        <div>
+          <h1 class="title">Certificate of Completion</h1>
+          <p class="subtitle">This certificate is presented to</p>
+        </div>
+
+        <!-- ชื่อผู้รับ -->
+        <div class="recipient-name">
+          prakasit khamchama
+        </div>
+
+        <!-- ข้อความรายละเอียด -->
+        <div class="description">
+          <p>For successful completion of the AI for Oceans</p>
+          <div class="course-title">Hour of Code</div>
+          <p>and demonstrating an understanding of the basic concepts of<br>Computer Science</p>
+        </div>
+
+        <!-- ส่วนล่าง: โลโก้, ลายเซ็น, ตราประทับ -->
+        <div class="footer-section">
+          
+          <!-- โลโก้ Code.org -->
+          <div class="code-logo">
+            <div class="code-box">
+              <div>C</div><div>O</div>
+              <div>D</div><div>E</div>
+            </div>
+            <div class="logo-text">
+              www.code.org<br>#CSforGood
+            </div>
+          </div>
+
+          <!-- ลายเซ็น -->
+          <div class="signature-area">
+            <div class="signature-img">Hadi Partovi</div>
+            <div class="signer-meta">
+              Hadi Partovi, Co-Founder and Chief Executive Officer, Code.org
+            </div>
+          </div>
+
+          <!-- ตราประทับ -->
+          <div class="badge-area">
+            GREAT WORK
+          </div>
+
+        </div>
+
+        <!-- ข้อความล่างสุด -->
+        <div class="bottom-note">
+          To learn beyond your first hour, visit Code.org
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
